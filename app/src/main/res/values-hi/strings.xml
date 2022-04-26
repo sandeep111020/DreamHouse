@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DreamHouse</string>
+    <string name="title_home">घर</string>
+    <string name="title_dashboard">डैशबोर्ड</string>
+    <string name="title_notifications">प्रोफ़ाइल</string>
+
+    <string name="title_activity_project_update">ProjectUpdate</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="my_projets">मरेी
+पररयोजऩाए</string>
+    <string name="my_history">मरे़ा
+इतिह़ास</string>
+    <string name="privacy_policy">गोपनीयि़ा नीति</string>
+    <string name="logout">लॉग आउट</string>
+    <string name="materials">स़ामग्री</string>
+    <string name="payments">भगु ि़ान</string>
+    <string name="tasks">क़ाय/string>
+    <string name="photos">िस्वीर</string>
+    <string name="view_all">सभी देखें </string>
+    <string name="delayed">ववलबं िि</string>
+    <string name="on_track">ैक पर</string>
+    <string name="completed">परू़ा ककय़ा हुआ</string></string>
+    <string name="balance">ि़ाकी ऱाशि</string>
+    <string name="costumer">कॉस््यमू र</string>
+<string name="dimensions">आय़ाम</string>
+<string name="location">स्थ़ान</string>
+<string name="budget">िजट</string>
+<string name="shape">आक़ार</string>
+<string name="look">देखऩ</string>
+<string name="vendors">ववक्रेि़ाओ</string>
+<string name="plans">योजऩाओं</string>
+<string name="soil_test">मदृ़ा परीक्षण</string>
+<string name="bot">िीओट</string>
+<string name="dash_board">ै िोड</string>
+<string name="profile">प्रोफ़ाइल</string>
+<string name="login">लॉग इन कर</string>
+</resources>

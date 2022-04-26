@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DreamHouse</string>
+    <string name="title_activity_home" translatable="false">MainActivity</string>
+    <string name="title_home">ଘର  </string>
+    <string name="title_dashboard">ଡ୍ୟାସବୋର୍ଡ |  </string>
+    <string name="title_notifications">పପ୍ରୋଫାଇଲ୍</string>
+    <string name="title_activity_project_update">ProjectUpdate</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="my_projets">ମୋର ପ୍ରୋଜେକ୍ଟଗୁଡିକ </string>
+    <string name="my_history">ମୋର ଇତିହାସ  </string>
+    <string name="privacy_policy">ଗୋପନୀୟତା ନୀତି </string>
+    <string name="logout">ପ୍ରସ୍ଥାନ କର </string>
+    <string name="materials">ସାମଗ୍ରୀ </string>
+    <string name="payments">ଦେୟ  </string>
+    <string name="tasks">କାର୍ଯ୍ୟଗୁଡ଼ିକ </string>
+    <string name="photos">ଫଟୋ </string>
+    <string name="view_all">ସମସ୍ତ ଦେଖନ୍ତୁ | </string>
+    <string name="delayed">ବିଳମ୍ବ </string>
+    <string name="on_track">ଟ୍ରାକରେ | </string>
+    <string name="completed">ସମାପ୍ତ ହୋଇଛ </string>
+    <string name="balance">ବାଲାନ୍ସ ରାଶି</string>
+    <string name="costumer">କଷ୍ଟ୍ୟୁମର୍ </string>
+    <string name="dimensions">ପରିମାପ </string>
+    <string name="location">ଅବସ୍ଥାନ  </string>
+    <string name="budget">ବଜେଟ୍  </string>
+    <string name="shape">ଆକୃତି | </string>
+    <string name="look"></string>
+    <string name="vendors">ବିକ୍ରେତାମାନେ |  </string>
+    <string name="plans">ଯୋଜନାଗୁଡିକ </string>
+    <string name="dash_board">ଡ୍ୟାସବୋର୍ଡ | </string>
+    <string name="profile">ପ୍ରୋଫାଇଲ୍  </string>
+    <string name="login">ଭିତରକୁ ଯାଉ  </string>
+<string name="soil_test">ମାଟି ପରୀକ୍ଷା  </string>
+<string name="bot">bot  </string>
+<!--<string name="price">ମୂଲ୍ୟ</string>-->
+    </resources>

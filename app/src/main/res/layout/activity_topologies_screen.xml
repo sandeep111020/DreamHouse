@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".TopologiesScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <soup.neumorphism.NeumorphTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="40dp"
+            android:text="One the basis of your location we fetch some toplogies of your locations"/>
+
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="match_parent"
+            app:neumorph_shapeType="flat"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+            <soup.neumorphism.NeumorphTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sespic Zones 5"
+                android:textAlignment="center"
+                app:neumorph_shadowElevation="20dp"
+                android:background="#E3DFDF"
+                android:id="@+id/sespiczone"
+                android:textSize="24dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/sespictxt"
+                android:visibility="gone"
+                android:layout_marginTop="50dp"
+                android:gravity="center_vertical"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="18dp"/>
+        </soup.neumorphism.NeumorphCardView>
+
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="match_parent"
+            app:neumorph_shapeType="flat"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+            <soup.neumorphism.NeumorphTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Wind Speed "
+                android:id="@+id/wind"
+                android:textAlignment="center"
+                app:neumorph_shadowElevation="20dp"
+                android:background="#E3DFDF"
+                android:textSize="24dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+
+                android:text="You are belonging to zone 5 so your don't need to build high buildings"
+                android:gravity="center_vertical"
+                android:layout_marginRight="20dp"
+                android:visibility="gone"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="30dp"
+                android:id="@+id/windtxt"
+                android:textSize="18dp"/>
+        </soup.neumorphism.NeumorphCardView>
+
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="match_parent"
+            app:neumorph_shapeType="flat"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+            <soup.neumorphism.NeumorphTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Climatology"
+                android:id="@+id/climate"
+                android:textAlignment="center"
+                app:neumorph_shadowElevation="20dp"
+                android:background="#E3DFDF"
+                android:textSize="24dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+
+                android:text="You are belonging to zone 5 so your don't need to build high buildings"
+                android:gravity="center_vertical"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="30dp"
+                android:visibility="gone"
+                android:layout_marginTop="50dp"
+                android:id="@+id/climattext"
+                android:textSize="18dp"/>
+        </soup.neumorphism.NeumorphCardView>
+
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="match_parent"
+            app:neumorph_shapeType="flat"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+
+            <soup.neumorphism.NeumorphTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Soil test 5"
+                android:textAlignment="center"
+                android:id="@+id/soil"
+                app:neumorph_shadowElevation="20dp"
+                android:background="#E3DFDF"
+                android:textSize="24dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+
+                android:text="You are belonging to zone 5 so your don't need to build high buildings"
+                android:gravity="center_vertical"
+                android:layout_marginRight="20dp"
+                android:id="@+id/soiltxt"
+                android:visibility="gone"
+
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="30dp"
+                android:textSize="18dp"/>
+
+        </soup.neumorphism.NeumorphCardView>
+
+
+        <soup.neumorphism.NeumorphButton
+            android:id="@+id/proceed"
+            style="@style/Widget.Neumorph.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="10dp"
+            android:text="PROCEED"
+            android:backgroundTint="@color/purple_700"
+            android:textColor="@color/purple_700"
+            app:neumorph_shapeType="basin" />
+    </LinearLayout>
+
+
+
+</ScrollView>

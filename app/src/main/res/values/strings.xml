@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Homify</string>
+    <string name="title_activity_home" translatable="false">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Profile</string>
+    <string name="title_activity_project_update">ProjectUpdate</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="ob_header1">MAKE IT SIMPLE</string>
+    <string name="ob_header2">FIT FOR YOU</string>
+    <string name="ob_header3">GOOD ANALYZE</string>
+    <string name="ob2_header1">SESIMIC ZONE</string>
+    <string name="ob2_header2">WIND SPEED</string>
+    <string name="ob2_header3">CLIMATOLOGY</string>
+    <string name="ob2_header4">NATURE OD LAND</string>
+    <string name="view_more"><u>View More</u></string>
+    <string name="view_less"><u>View Less</u></string>
+    <string name="ob_get_started">GET STARTED</string>
+
+    <string name="ob_desc1">We pay attention to all your constructions, and find for way saving your money.</string>
+    <string name="ob_desc2">Situable houses according to your locations climate weather</string>
+    <string name="ob_desc3">Have a perfect analysis of your budget</string>
+
+    <string name="ob2_desc1"> The sesimic zone value of your area is 5 so you not allowed to build high buildings</string>
+    <string name="ob2_desc2">The wind speed value of your area is 50 so you not allowed to build high buildings</string>
+    <string name="ob2_desc3">The cilmatology of your area is snowfall so you not allowed to build flat roof houses </string>
+    <string name="ob2_desc4">The nature of your land is hilly so you  prefer wooden buildings</string>
+
+    <string name="my_projets">My Projets</string>
+    <string name="my_history">My History</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="logout">Logout</string>
+    <string name="materials">Materils</string>
+    <string name="payments">Payments</string>
+    <string name="tasks">Tasks</string>
+    <string name="photos">Photos</string>
+    <string name="view_all">View All</string>
+    <string name="delayed">Delayed</string>
+    <string name="on_track">On Track</string>
+    <string name="completed">Completed</string>
+    <string name="balance">Balance</string>
+    <string name="costumer">Costumer</string>
+    <string name="dimensions">Dimensions</string>
+    <string name="location">Loction</string>
+    <string name="budget">Budget</string>
+    <string name="shape">Shape</string>
+    <string name="look">Look</string>
+    <string name="vendors">Vendors</string>
+    <string name="plans">Plans</string>
+    <string name="soil_test">Soil Test</string>
+    <string name="bot">Bot</string>
+    <string name="dash_board">Dash Board</string>
+    <string name="profile">Profile</string>
+    <string name="login">Login</string>
+</resources>

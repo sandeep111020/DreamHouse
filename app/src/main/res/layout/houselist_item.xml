@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_marginTop="20dp"
+android:layout_height="wrap_content"
+    android:id="@+id/laylay"
+android:orientation="vertical"
+
+xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="2dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:background="@drawable/cardborder2">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/img1"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/img1"
+        >
+    </ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="location : pendurthi "
+            android:layout_marginTop="10dp"
+            android:textColor="#F4000000"
+            android:textSize="25dp"
+            android:layout_weight="1"
+            android:id="@+id/title"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"/>
+        <RatingBar
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.RatingBar.Indicator"
+            android:rating="0.5"
+            android:numStars="1"
+            android:layout_marginBottom="10dp"
+            >
+
+        </RatingBar>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3"
+            android:textSize="22dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="0dp"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+
+
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="NAME : Sandeep"
+        android:textColor="#8E000000"
+        android:textSize="20dp"
+        android:id="@+id/name"
+        android:layout_marginLeft="20dp">
+
+    </TextView>
+
+
+
+    <TextView
+        android:id="@+id/viewmore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/view_more"
+        android:layout_gravity="end"
+        android:textColor="#2196F3"
+        android:layout_marginBottom="7dp"
+        android:layout_marginRight="40dp"
+        android:textSize="10dp">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="location : pendurthi "
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:id="@+id/des"
+        android:visibility="gone"
+        android:layout_marginLeft="20dp">
+
+    </TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="location : pendurthi "
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:id="@+id/number"
+        android:visibility="gone"
+        android:layout_marginLeft="20dp">
+
+    </TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="location : pendurthi "
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:visibility="gone"
+        android:id="@+id/address"
+        android:layout_marginLeft="20dp">
+
+    </TextView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="24dp"
+        android:id="@+id/submit"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="gone"
+        android:textStyle="bold"
+        android:text="Book" />
+
+</LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">DreamHouse</string>
+    <string name="title_home">ఇల్లు </string>
+    <string name="title_dashboard">డాష్బోర్డ్ </string>
+    <string name="title_notifications">ప్రొఫైల్ </string>
+    <string name="title_activity_project_update">ProjectUpdate</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="my_projets">నా ప్రాజెక్టులు </string>
+    <string name="my_history">నా చరిత్ర </string>
+    <string name="privacy_policy">గోప్యతా విధానం </string>
+    <string name="logout">లాగ్అవుట్ </string>
+    <string name="materials">పదార్థాలు </string>
+    <string name="payments">చెల్లింపులు </string>
+    <string name="tasks">పనులు </string>
+    <string name="photos">ఫోటోలు </string>
+    <string name="view_all">అన్ని చూడండి </string>
+    <string name="delayed">ఆలస్యమైంది </string>
+    <string name="on_track">గతిలో ఉండుట </string>
+    <string name="completed">పూర్తయింది </string>
+    <string name="balance">బాలాన్స్</string>
+    <string name="costumer">కస్టమర్</string>
+    <string name="dimensions">కొలతలు </string>
+    <string name="location">స్థానం </string>
+    <string name="budget">బడ్జెట్ </string>
+    <string name="shape">ఆకారం </string>
+    <string name="look"></string>
+    <string name="vendors">విక్రేతలు </string>
+    <string name="plans">ప్రణాళికలు </string>
+    <string name="soil_test">మట్టి పరీక్ష </string>
+    <string name="bot">బోట్ </string>
+    <string name="dash_board">Dash Board</string>
+    <string name="profile">ప్రొఫైల్ </string>
+    <string name="login">ప్రవేశించండి </string>
+</resources>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/drawable-v24/non_selected_item_dot.xml" value="0.1" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/drawable-v24/selected_item_dot.xml" value="0.1" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/drawable/border.xml" value="0.1545" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/drawable/cardbo.xml" value="0.1545" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/drawable/cardborder.xml" value="0.1545" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/drawable/cardborder2.xml" value="0.1545" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/drawable/cardborder3.xml" value="0.183" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/drawable/ic_baseline_arrow_forward_ios_24.xml" value="0.145" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/drawable/ic_baseline_call_24.xml" value="0.1545" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/drawable/ic_baseline_directions_24.xml" value="0.1545" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/drawable/ic_baseline_history_24.xml" value="0.145" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/drawable/ic_baseline_logout_24.xml" value="0.145" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/drawable/ic_baseline_policy_24.xml" value="0.145" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/drawable/ic_baseline_space_dashboard_24.xml" value="0.145" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/drawable/ic_baseline_translate_24.xml" value="0.145" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1385" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/drawable/nonselected.xml" value="0.1545" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_bank_list_screen.xml" value="0.1" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_bot_screen.xml" value="0.1" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_budget_analysis.xml" value="0.1703125" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_budget_screen.xml" value="0.1703125" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_chat_bot.xml" value="0.13043478260869565" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_floor_plans_screen.xml" value="0.1" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_house_type_selection.xml" value="0.10666666666666667" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_housesdisplay_screen.xml" value="0.1703125" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_land_rules_screen.xml" value="0.1" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_login_screen.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_my_history.xml" value="0.1" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_new_project.xml" value="0.22" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_onboarding2.xml" value="0.1703125" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_onboarding_screen.xml" value="0.1" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_project_progress.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_project_update.xml" value="0.1703125" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_soil_test_screen.xml" value="0.22" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_specifications_screen.xml" value="0.10733695652173914" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_techis_screen.xml" value="0.1" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_topologies_screen.xml" value="0.10869565217391304" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_vendors.xml" value="0.1" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/banklist_layout.xml" value="0.1" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/bot_msg.xml" value="0.13043478260869565" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/fragment_bottom_sheet.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/fragment_dashboard.xml" value="0.11005434782608696" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/fragment_home.xml" value="0.11005434782608696" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/fragment_material.xml" value="0.1703125" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/fragment_notifications.xml" value="0.12" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/fragment_payments.xml" value="0.22" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/fragment_paymentsfragment.xml" value="0.1703125" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/fragment_photo.xml" value="0.1703125" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/fragment_photofragment.xml" value="0.1703125" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/fragment_project_update.xml" value="0.15364583333333334" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/fragment_task.xml" value="0.1703125" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/houselist_item.xml" value="0.1" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/material_item.xml" value="0.22" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/onboard2.xml" value="0.10666666666666667" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/onboard_item.xml" value="0.1" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/payment_item.xml" value="0.1" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/photolayout.xml" value="0.1" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/popuplayout.xml" value="0.10733695652173914" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/project_titlelayout.xml" value="0.22" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/task_item.xml" value="0.1" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/user_msg.xml" value="0.13043478260869565" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/vendor_item.xml" value="0.22" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1703125" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -32,7 +33,7 @@ public class NewProject extends AppCompatActivity {
 
     NeumorphButton submit;
     Spinner spin,state;
-    EditText name, location, dimesion,budget;
+    EditText name, location, dimesion,budget,sbc;
     FirebaseDatabase rootNode;
     DatabaseReference reference;
     CheckBox check;
@@ -51,6 +52,7 @@ public class NewProject extends AppCompatActivity {
         spin=findViewById(R.id.Dept);
         name= findViewById(R.id.name);
         state=findViewById(R.id.state);
+        sbc=findViewById(R.id.sbc);
         sptype=findViewById(R.id.spintype);
         location=findViewById(R.id.location);
         dimesion=findViewById(R.id.dimensions);
@@ -108,6 +110,17 @@ public class NewProject extends AppCompatActivity {
                 locationAddress.getAddressFromLocation(Slocation,
                         getApplicationContext(), new GeocoderHandler());
 
+
+                // Storing data into SharedPreferences
+                SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref",MODE_PRIVATE);
+
+                SharedPreferences.Editor myEdit = sharedPreferences.edit();
+
+                myEdit.putString("name", Sname);
+                myEdit.putString("location", Slocation);
+                myEdit.putString("dimension", Sdimension);
+                myEdit.putString("type", Type);
+                myEdit.commit();
 
 //                Newprojectmodel addnewUser = new Newprojectmodel(currentuser,Sname,Slocation,Sdimension,Sbudget,Type);
 //                reference.child(currentuser+Sname).setValue(addnewUser);

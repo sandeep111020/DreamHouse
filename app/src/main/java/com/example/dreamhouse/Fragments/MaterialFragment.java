@@ -1,6 +1,10 @@
 package com.example.dreamhouse.Fragments;
 
+import static android.content.Context.MODE_APPEND;
+
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -59,10 +63,15 @@ public class MaterialFragment extends Fragment {
         recyclerView=root.findViewById(R.id.recycler_menu);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        SharedPreferences sh = getContext().getSharedPreferences("MySharedPref", Context.MODE_MULTI_PROCESS);
 
+// The value will be default as empty string because for
+// the very first time when the app is opened, there is nothing to show
+        String s1 = sh.getString("id", "");
+        String num = sh.getString("num", "");
         FirebaseRecyclerOptions<MaterialModel> options =
                 new FirebaseRecyclerOptions.Builder<MaterialModel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Projectsvendor").child("q2QirNJzWZafOdcIhmDKFJgVjHY2").child("q2QirNJzWZafOdcIhmDKFJgVjHY2"+"My Project").child("Material"), MaterialModel.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Projectsvendor").child(num).child(s1).child("Material"), MaterialModel.class)
                         .build();
 
         // .child("24052021130648")

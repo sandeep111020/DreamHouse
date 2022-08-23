@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".VasthuScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:textColor="#E73737"
+                android:text="North"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                android:text="It is cool and less bright. It never receives direct solar insolation any time.Hence, guest room, Meditation or Puja room, where stay is for a smaller duration and store room which should be dark and cool are to be located along North. Verandah on north makes the interior room quite gloomy and is never preferred .For this reason sometimes sunshades may not be provided along north direction"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:textColor="#E73737"
+                android:text="North-East"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                android:text="It gets diffused light at sunrise and hence, ideally suited for the location of Puja and Study room which needs light but without heat. Kitchen may be located along north east (though against Vaastu), when it cannot be located along East the ideal direction for it."/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:textColor="#E73737"
+                android:text=" East"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="The day breaks with the pleasant sight of rising sun with brightness devoid of heat which activates life and is bactericidal. With time solar intensity escalates and moisture content of air declines.
+Kitchen is the hottest room of a residential house which needs more brightness and it requires east aspect as it gets cooled in the afternoon.
+East is also suited for Dining room as the breakfast in bright and cheerful environment of the morning and supper in cool environment is quite conducive for eating.
+Children's (school going) bedroom may be located along East with windows also along the same direction to awaken them at the day break.
+Also it is suited for drawing (as suggested in vaastu) as east facing (entrance) of the house is considered to be auspicious"
+                android:textColor="#000000"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:textColor="#E73737"
+                android:text="South-East"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                android:text="South east receives the warming sun and shall be bright for most part of the day. Hence, it is quite suitable for the location of Drawing room"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:textColor="#E73737"
+                android:text="South"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                android:text="It is the direction that receives the highest solar intensity for most part of the day.
+It is suited for the location of the drawing room which need be bright. Bed -room may be located along south if it is suitably shielded from excess solar radiation. Verandah on south is quite common to protect the interior rooms from excess heat.Kitchen, the hottest room should never be located along this direction."
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:textColor="#E73737"
+                android:text="South-West"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                android:text=" Rooms along this direction get the late afternoon sun. Hence, the rooms remain less bright during the forenoon and brighter and hotter in the afternoon.
+Drawing room, Dining room and Bed room may be located along this direction. Heat absorbed during the daytime may be radiating inside after night fall. But this heating causes exchange of air currents. Shading through trees or by providing verandah may make the interior rooms cooler. Kitchen is not to be located along south west."
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:textColor="#E73737"
+                android:text="West"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                android:text="West gets the sun for the entire afternoon resulting in brightness with heat and with less humidity. Hence, external walls of habitable rooms are to shielded against dry heat when located in west direction. This can be achieved providing deep verandahs.
+Drawing room and Bed room may be located along West."
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:textColor="#E73737"
+                android:text="North-West"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                android:text="This direction gets less light and that too in the late afternoon.Hence, remains relatively cooler.Hence, suited for bed room and study room."
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</ScrollView>

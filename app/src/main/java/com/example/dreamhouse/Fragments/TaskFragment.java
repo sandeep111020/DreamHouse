@@ -1,5 +1,7 @@
 package com.example.dreamhouse.Fragments;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,10 +59,15 @@ public class TaskFragment extends Fragment {
         recyclerView=root.findViewById(R.id.recycler_menu);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        SharedPreferences sh = getContext().getSharedPreferences("MySharedPref", Context.MODE_MULTI_PROCESS);
 
+// The value will be default as empty string because for
+// the very first time when the app is opened, there is nothing to show
+        String s1 = sh.getString("id", "");
+        String num = sh.getString("num", "");
         FirebaseRecyclerOptions<TaskModel> options =
                 new FirebaseRecyclerOptions.Builder<TaskModel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Projectsvendor").child("q2QirNJzWZafOdcIhmDKFJgVjHY2").child("q2QirNJzWZafOdcIhmDKFJgVjHY2"+"My Project").child("Task"), TaskModel.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Projectsvendor").child(num).child(s1).child("Task"), TaskModel.class)
                         .build();
 
         // .child("24052021130648")

@@ -1,7 +1,10 @@
 package com.example.dreamhouse.Adapter;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,6 +60,29 @@ public class ProjectAdapter extends FirebaseRecyclerAdapter<Newprojectmodel, Pro
                     i.putExtra("name",model.getName());
                     i.putExtra("dimen",model.getDimension());
                     i.putExtra("type","with");
+                    // Storing data into SharedPreferences
+                    SharedPreferences sharedPreferences = context.getSharedPreferences("MySharedPref",MODE_PRIVATE);
+
+// Creating an Editor object to edit(write to the file)
+                    SharedPreferences.Editor myEdit = sharedPreferences.edit();
+
+// Storing the key and its value as the data fetched from edittext
+                    String num="";
+                    String empid=model.getEmpid().toString();
+                    for(int l = 0;l<model.getEmpid().length();l++){
+                      if(Character.isAlphabetic(empid.charAt(l))){
+                          break;
+                      }
+                      num=num+empid.charAt(l);
+                    }
+                    myEdit.putString("id", model.getEmpid().toString());
+                    myEdit.putString("num", num);
+
+// Once the changes have been made,
+// we need to commit to apply those changes made,
+// otherwise, it will throw an error
+                    myEdit.commit();
+
                     context.startActivity(i);
                 }else {
                     Intent i = new Intent(context, ProjectProgress.class);

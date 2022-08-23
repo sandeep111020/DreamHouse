@@ -1,6 +1,5 @@
 package com.example.dreamhouse.ui.notifications;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,7 +14,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.dreamhouse.Fragments.BottomSheetFragment;
-import com.example.dreamhouse.MainActivity;
 import com.example.dreamhouse.MyHistory;
 import com.example.dreamhouse.NewProject;
 import com.example.dreamhouse.R;
@@ -41,6 +39,7 @@ public class NotificationsFragment extends Fragment {
         myprojects=root.findViewById(R.id.myproject);
         privacypolicy=root.findViewById(R.id.privacypolicy);
         logout=root.findViewById(R.id.logout);
+
 
         myprojects.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +69,6 @@ public class NotificationsFragment extends Fragment {
                 startActivity(i);
             }
         });
-
         lang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

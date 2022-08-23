@@ -23,7 +23,9 @@ import com.example.dreamhouse.NewProject;
 import com.example.dreamhouse.ProjectProgress;
 import com.example.dreamhouse.ProjectUpdate;
 import com.example.dreamhouse.R;
+import com.example.dreamhouse.SoilTestScreen;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.synnapps.carouselview.CarouselView;
@@ -37,6 +39,7 @@ public class DashboardFragment extends Fragment {
     int[] sampleImages = {R.drawable.img1, R.drawable.img2, R.drawable.img3, R.drawable.img1, R.drawable.img5,R.drawable.img6,R.drawable.img7,R.drawable.img8};
     private RecyclerView recyclerView;
     private ProjectAdapter adapter1;
+    FloatingActionButton fab;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -45,10 +48,9 @@ public class DashboardFragment extends Fragment {
                 new ViewModelProvider(this).get(DashboardViewModel.class);
         View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
         final TextView textView = root.findViewById(R.id.text_dashboard);
-//        TextView demo= root.findViewById(R.id.demoproj);
         TextView newproj= root.findViewById(R.id.newproject);
-//        TextView demo2= root.findViewById(R.id.demoproj2);
         recyclerView=root.findViewById(R.id.recycler_menu);
+        fab=root.findViewById(R.id.fab);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
@@ -57,7 +59,6 @@ public class DashboardFragment extends Fragment {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Projects").child(currentuser), Newprojectmodel.class)
                         .build();
 
-        // .child("24052021130648")
         adapter1 = new ProjectAdapter(options,getActivity());
         recyclerView.setAdapter(adapter1);
         adapter1.startListening();
@@ -65,6 +66,13 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), NewProject.class);
+                startActivity(i);
+            }
+        });
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), SoilTestScreen.class);
                 startActivity(i);
             }
         });

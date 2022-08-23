@@ -5,10 +5,12 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <queries>
         <package android:name="com.google.android.youtube" />
         <package android:name="com.example.threedviewapp" />
     </queries>
+
     <application
         android:allowBackup="true"
         android:configChanges="orientation|screenSize"
@@ -19,7 +21,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DreamHouse"
         android:usesCleartextTraffic="true">
-
+        <activity
+            android:name=".ProjectProfileScreen"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPdfActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VasthuScreen"
+            android:exported="false" />
         <activity
             android:name=".Onboarding2"
             android:exported="false" />
@@ -86,7 +96,8 @@
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

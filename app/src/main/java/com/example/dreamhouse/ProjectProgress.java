@@ -61,6 +61,13 @@ public class ProjectProgress extends AppCompatActivity {
            hide2.setVisibility(View.GONE);
            hide1.setVisibility(View.GONE);
         }
+        name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(ProjectProgress.this,ProjectProfileScreen.class);
+                startActivity(i);
+            }
+        });
         img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -156,7 +163,7 @@ public class ProjectProgress extends AppCompatActivity {
         soiltest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(ProjectProgress.this, SoilTestScreen.class);
+                Intent i = new Intent(ProjectProgress.this, VasthuScreen.class);
                 startActivity(i);
             }
         });

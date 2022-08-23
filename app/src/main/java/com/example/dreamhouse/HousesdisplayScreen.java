@@ -5,14 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
 //import com.example.dreamhouse.Adapter.HouselistAdapter;
 import com.example.dreamhouse.Adapter.HouselistAdapter;
 import com.example.dreamhouse.Adapter.MyListAdapter;
+import com.example.dreamhouse.Adapter.ProjectsAdapter;
 import com.example.dreamhouse.Models.Houseslist;
 import com.example.dreamhouse.Models.Vendoritemmodel;
+import com.example.dreamhouse.Models.projectmodel;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,8 +31,10 @@ public class HousesdisplayScreen extends AppCompatActivity {
     RecyclerView recyclerView;
 //    private HouselistAdapter adapter1;
     String val;
+    Boolean check;
     ArrayList<Vendoritemmodel> dataModels;
     private HouselistAdapter adapter1;
+    ProjectsAdapter adapter2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,24 +73,58 @@ public class HousesdisplayScreen extends AppCompatActivity {
 //        });
 //        MyListAdapter adapter = new MyListAdapter(dataModels);
 //        recyclerView.setAdapter(adapter);
-        FirebaseRecyclerOptions<Vendoritemmodel> options =
-                new FirebaseRecyclerOptions.Builder<Vendoritemmodel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("ConstructorHouses"), Vendoritemmodel.class)
-                        .build();
+        // Retrieving the value using its keys the file name
+// must be same in both saving and retrieving the data
+        SharedPreferences sh = getSharedPreferences("MySharedPref", Context.MODE_MULTI_PROCESS);
 
-        adapter1 = new HouselistAdapter(options,getApplicationContext(),val);
-        recyclerView.setAdapter(adapter1);
+// The value will be default as empty string because for
+// the very first time when the app is opened, there is nothing to show
+        String Type = sh.getString("type", "");
+Toast.makeText(HousesdisplayScreen.this,Type,Toast.LENGTH_SHORT).show();
+// We can then use the data
+       if(!Type.contains("Without")) {
+           check=true;
+           FirebaseRecyclerOptions<Vendoritemmodel> options =
+                   new FirebaseRecyclerOptions.Builder<Vendoritemmodel>()
+                           .setQuery(FirebaseDatabase.getInstance().getReference().child("ConstructorHouses"), Vendoritemmodel.class)
+                           .build();
+
+           adapter1 = new HouselistAdapter(options, getApplicationContext(), val);
+           recyclerView.setAdapter(adapter1);
+       }else{
+           check=false;
+           FirebaseRecyclerOptions<projectmodel> options =
+                   new FirebaseRecyclerOptions.Builder<projectmodel>()
+                           .setQuery(FirebaseDatabase.getInstance().getReference().child("ProjectsWithout"), projectmodel.class)
+                           .build();
+
+           // .child("24052021130648")
+           adapter2 = new ProjectsAdapter(options,getApplicationContext());
+           recyclerView.setAdapter(adapter2);
+       }
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        adapter1.startListening();
+        if(check){
+            adapter1.startListening();
+        }else{
+            adapter2.startListening();
+        }
+
+
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        adapter1.stopListening();
+        if(check){
+            adapter1.stopListening();
+        }else{
+            adapter2.stopListening();
+        }
+
+
     }
 }

@@ -2,6 +2,7 @@ package com.example.dreamhouse.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -26,6 +27,7 @@ import com.example.dreamhouse.ProjectUpdate;
 import com.example.dreamhouse.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
@@ -70,13 +72,24 @@ public class HouselistAdapter extends FirebaseRecyclerAdapter<Vendoritemmodel, H
             DatabaseReference reference;
             rootNode = FirebaseDatabase.getInstance();
             reference = rootNode.getReference("Projectsvendor");
+            FirebaseDatabase rootNode2;
+            DatabaseReference reference2;
+            rootNode2 = FirebaseDatabase.getInstance();
+            reference2 = rootNode2.getReference("Projects");
+            SharedPreferences sh = context.getSharedPreferences("MySharedPref", Context.MODE_MULTI_PROCESS);
+            String Uname = sh.getString("name", "");
+            String Ulocation = sh.getString("location", "");
+            String Udimen = sh.getString("dimension", "");
+            String Type = sh.getString("type", "");
+            String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
             holder.submit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
-                    Newprojectmodel addnewUser = new Newprojectmodel(key,"My Project","Vizag","1000","100000","With Contractor");
-                    reference.child(key).child(key+"My Project").setValue(addnewUser);
+                    Newprojectmodel addnewUser = new Newprojectmodel(model.getNumber()+Uname+Udimen,Uname,Ulocation,Udimen,"100000",Type);
+                    reference.child(model.getNumber()).child(model.getNumber()+Uname+Udimen).setValue(addnewUser);
+                    reference2.child(currentuser).child(currentuser+Uname).setValue(addnewUser);
 
                 }
             });

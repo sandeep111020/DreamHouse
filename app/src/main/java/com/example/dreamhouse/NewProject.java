@@ -1,13 +1,25 @@
 package com.example.dreamhouse;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -27,22 +39,30 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+
 import soup.neumorphism.NeumorphButton;
 
 public class NewProject extends AppCompatActivity {
 
     NeumorphButton submit;
     Spinner spin,state;
-    EditText name, location, dimesion,budget,sbc;
+    EditText name, location, dimesion,budget,sbc,fstate;
     FirebaseDatabase rootNode;
     DatabaseReference reference;
     CheckBox check;
-    Spinner sptype,landtype;
+    String finalstate;
+    Spinner sptype;
+    private static final int REQUEST_LOCATION = 1;
+    private static final String TAG = "GeocodingLocation2";
     String[] dept = { "With Contactor","Without Contractor"};
     String[] type={"sq feet","sq yards","cents","sq meters"};
     String[] slt={"Hilly area", "Plain area"};
     String[] sta={"Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttarakhand","Uttar Pradesh","West Bengal","Andaman and Nicobar Islands","Chandigarh","Delhi","Lakshadweep","Puducherry"           };
     private Newprojectmodel newproj;
+    LocationManager locationManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,25 +71,28 @@ public class NewProject extends AppCompatActivity {
         submit=findViewById(R.id.submit);
         spin=findViewById(R.id.Dept);
         name= findViewById(R.id.name);
+        fstate=findViewById(R.id.filledstate);
         state=findViewById(R.id.state);
         sbc=findViewById(R.id.sbc);
         sptype=findViewById(R.id.spintype);
         location=findViewById(R.id.location);
         dimesion=findViewById(R.id.dimensions);
-        landtype=findViewById(R.id.landtype);
 //        check=findViewById(R.id.budget);
 
         ArrayAdapter ab = new ArrayAdapter(this,android.R.layout.simple_spinner_item,sta);
         ab.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         state.setAdapter(ab);
-        ArrayAdapter ac = new ArrayAdapter(this,android.R.layout.simple_spinner_item,slt);
-        ac.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        landtype.setAdapter(ac);
+
         ArrayAdapter at = new ArrayAdapter(this,android.R.layout.simple_spinner_item,type);
         at.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sptype.setAdapter(at);
 
-
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            OnGPS();
+        } else {
+            getLocation();
+        }
         // initializing our object
         // class variable.
 //        newproj = new Newprojectmodel();
@@ -118,13 +141,115 @@ public class NewProject extends AppCompatActivity {
                // addDatatoFirebase(currentuser,Sname,Slocation,Sdimension,Sbudget);
                 Toast.makeText(NewProject.this, "Submission Completed"+currentuser, Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(NewProject.this,Onboarding2.class);
-                i.putExtra("state",state.getSelectedItem().toString());
+//                i.putExtra("state",state.getSelectedItem().toString());
+                i.putExtra("state",finalstate);
                 i.putExtra("heigh",heigh);
                 startActivity(i);
 //                Intent i = new Intent(NewProject.this,ProjectUpdate.class);
 //                startActivity(i);
             }
         });
+    }
+    private void OnGPS() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Enable GPS").setCancelable(false).setPositiveButton("Yes", new  DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+            }
+        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+    }
+    private void getLocation() {
+        if (ActivityCompat.checkSelfPermission(
+                NewProject.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                NewProject.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
+        } else {
+            Location locationGPS = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            if (locationGPS != null) {
+                double lat = locationGPS.getLatitude();
+                double longi = locationGPS.getLongitude();
+                finalstate = getAddress(this,lat,longi);
+                location.setText(getAddresscode(this,lat,longi));
+                fstate.setText(finalstate.toUpperCase());
+//                Toast.makeText(this, finalstate, Toast.LENGTH_SHORT).show();
+//                latitude = String.valueOf(lat);
+//                longitude = String.valueOf(longi);
+//                showLocation.setText("Your Location: " + "\n" + "Latitude: " + latitude + "\n" + "Longitude: " + longitude);
+            } else {
+                Toast.makeText(this, "Unable to find location.", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+    public static String getAddress(Context context, double LATITUDE, double LONGITUDE){
+        //Set Address
+        try {
+            Geocoder geocoder = new Geocoder(context, Locale.getDefault());
+            List<Address> addresses = geocoder.getFromLocation(LATITUDE, LONGITUDE, 1);
+
+            if (addresses != null && addresses.size() > 0) {
+                String address = addresses.get(0).getAddressLine(0); // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
+                String city = addresses.get(0).getLocality();
+                String state = addresses.get(0).getAdminArea();
+                String country = addresses.get(0).getCountryName();
+                String postalCode = addresses.get(0).getPostalCode();
+                String knownName = addresses.get(0).getFeatureName(); // Only if available else return NULL
+                Log.d(TAG, "getAddress:  address" + address);
+                Log.d(TAG, "getAddress:  city" + city);
+                Log.d(TAG, "getAddress:  state" + state);
+                Log.d(TAG, "getAddress:  postalCode" + postalCode);
+                Log.d(TAG, "getAddress:  knownName" + knownName);
+
+
+                return state;
+            }else{
+                return  "";
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return  e.toString();
+        }
+
+    }
+    public static String getAddresscode(Context context, double LATITUDE, double LONGITUDE){
+        //Set Address
+        try {
+            Geocoder geocoder = new Geocoder(context, Locale.getDefault());
+            List<Address> addresses = geocoder.getFromLocation(LATITUDE, LONGITUDE, 1);
+
+            if (addresses != null && addresses.size() > 0) {
+                String address = addresses.get(0).getAddressLine(0); // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
+                String city = addresses.get(0).getLocality();
+                String state = addresses.get(0).getAdminArea();
+                String country = addresses.get(0).getCountryName();
+                String postalCode = addresses.get(0).getPostalCode();
+                String knownName = addresses.get(0).getFeatureName(); // Only if available else return NULL
+                Log.d(TAG, "getAddress:  address" + address);
+                Log.d(TAG, "getAddress:  city" + city);
+                Log.d(TAG, "getAddress:  state" + state);
+                Log.d(TAG, "getAddress:  postalCode" + postalCode);
+                Log.d(TAG, "getAddress:  knownName" + knownName);
+
+
+                return postalCode;
+            }else{
+                return  "";
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return  e.toString();
+        }
+
     }
     private class GeocoderHandler extends Handler {
         @Override

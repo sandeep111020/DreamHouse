@@ -57,6 +57,9 @@ public class HouseTypeSelectionActivity extends AppCompatActivity {
         txt5=findViewById(R.id.txt5);
         txt6=findViewById(R.id.txt6);
         imageView6 = (ImageView) findViewById(R.id.imageView6);
+        //hehehdhbassndxlbwaedcnwbadnlejhcn cbcad check it
+        lin4.setBackgroundResource(R.color.grey);
+        imageView4.setEnabled(false);
         if(area.contains("snow")){
             lin2.setBackgroundResource(R.color.grey);
             lin3.setBackgroundResource(R.color.grey);

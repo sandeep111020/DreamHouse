@@ -14,11 +14,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.dreamhouse.BudgetAnalysis;
 import com.example.dreamhouse.HomeActivity;
 import com.example.dreamhouse.Models.Houseslist;
 import com.example.dreamhouse.Models.Newprojectmodel;
@@ -36,12 +38,12 @@ import com.squareup.picasso.Picasso;
 
 public class HouselistAdapter extends FirebaseRecyclerAdapter<Vendoritemmodel, HouselistAdapter.myviewholder> {
 
-    String date,taskid,empid;
 
     Context context;
     DatabaseReference databaseRef;
     String checj;
     String val;
+    String Udimen;
 
     public HouselistAdapter(@NonNull FirebaseRecyclerOptions<Vendoritemmodel> options, Context context,String val) {
         super(options);
@@ -80,8 +82,9 @@ public class HouselistAdapter extends FirebaseRecyclerAdapter<Vendoritemmodel, H
             SharedPreferences sh = context.getSharedPreferences("MySharedPref", Context.MODE_MULTI_PROCESS);
             String Uname = sh.getString("name", "");
             String Ulocation = sh.getString("location", "");
-            String Udimen = sh.getString("dimension", "");
+            Udimen= sh.getString("dimension", "");
             String Type = sh.getString("type", "");
+            Toast.makeText(context, Udimen, Toast.LENGTH_SHORT).show();
             String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
             holder.submit.setOnClickListener(new View.OnClickListener() {
@@ -132,7 +135,7 @@ public class HouselistAdapter extends FirebaseRecyclerAdapter<Vendoritemmodel, H
     class myviewholder extends RecyclerView.ViewHolder {
 
         TextView name,number;
-        ImageView img;
+        ImageView img,budget;
         LinearLayout laylay;
         TextView address,title,desc;
         Button submit;
@@ -150,10 +153,20 @@ public class HouselistAdapter extends FirebaseRecyclerAdapter<Vendoritemmodel, H
             number = (TextView) itemView.findViewById(R.id.number);
             title=itemView.findViewById(R.id.title);
             laylay=itemView.findViewById(R.id.laylay);
+            budget=itemView.findViewById(R.id.budgetim);
             desc=itemView.findViewById(R.id.des);
             submit=itemView.findViewById(R.id.submit);
             TextView txt=itemView.findViewById(R.id.viewmore);
             RatingBar txt1=itemView.findViewById(R.id.rating);
+            budget.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(context, BudgetAnalysis.class);
+                    i.putExtra("dimen",Udimen);
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(i);
+                }
+            });
             txt.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

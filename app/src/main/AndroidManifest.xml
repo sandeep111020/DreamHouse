@@ -14,6 +14,7 @@
     <application
         android:allowBackup="true"
         android:configChanges="orientation|screenSize"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_security_config"
@@ -21,6 +22,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DreamHouse"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".SchemesScreen"
+            android:exported="false" />
         <activity
             android:name=".NewPayment"
             android:exported="false" />

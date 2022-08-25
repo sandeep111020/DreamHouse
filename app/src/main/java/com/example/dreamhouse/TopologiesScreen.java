@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -177,6 +178,7 @@ public class TopologiesScreen extends AppCompatActivity {
 
         });
         Query checkuser3 = FirebaseDatabase.getInstance().getReference("Climatology").child(state.toUpperCase());
+        Toast.makeText(this, state.toUpperCase(), Toast.LENGTH_SHORT).show();
         checkuser3.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

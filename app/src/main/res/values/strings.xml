@@ -20,14 +20,14 @@
     <string name="view_less"><u>View Less</u></string>
     <string name="ob_get_started">GET STARTED</string>
 
-    <string name="ob_desc1">We pay attention to all your constructions, and find for way saving your money.</string>
-    <string name="ob_desc2">Situable houses according to your locations climate weather</string>
+    <string name="ob_desc1">We pay attention to all your constructions, and find way for saving your money.</string>
+    <string name="ob_desc2">Situable houses according to your locations climate</string>
     <string name="ob_desc3">Have a perfect analysis of your budget</string>
 
-    <string name="ob2_desc1"> The sesimic zone value of your area is 5 so you not allowed to build high buildings</string>
-    <string name="ob2_desc2">The wind speed value of your area is 50 so you not allowed to build high buildings</string>
-    <string name="ob2_desc3">The cilmatology of your area is snowfall so you not allowed to build flat roof houses </string>
-    <string name="ob2_desc4">The nature of your land is hilly so you  prefer wooden buildings</string>
+    <string name="ob2_desc1"> The sesimic zone value of your area is 3 so you have chance to build high buildings</string>
+    <string name="ob2_desc2">The wind speed value of your area is 44 so prefer upto 3 floors</string>
+    <string name="ob2_desc3">The cilmatology of your area is heavyrainfall so you dont prefer wooden houses </string>
+    <string name="ob2_desc4">The nature of your land is plain </string>
     <string name="ob2_desc5">The Safe bearing capaicty of your land is 10ton week like soil it is risk to construct the high buildings</string>
 
     <string name="my_projets">My Projets</string>

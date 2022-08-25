@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.dreamhouse.BudgetAnalysis;
 import com.example.dreamhouse.HomeActivity;
 import com.example.dreamhouse.Models.Newprojectmodel;
 import com.example.dreamhouse.Models.projectmodel;
@@ -50,6 +52,7 @@ public class ProjectsAdapter extends FirebaseRecyclerAdapter<projectmodel, com.e
     private DatabaseReference databaseRef,databaseRef4;
     private DatabaseReference database;
     private String message;
+    String Udimen;
 
     public ProjectsAdapter(@NonNull FirebaseRecyclerOptions<projectmodel> options, Context context) {
         super(options);
@@ -75,23 +78,23 @@ public class ProjectsAdapter extends FirebaseRecyclerAdapter<projectmodel, com.e
     @Override
     protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull projectmodel model) {
         holder.title.setText("Name: "+model.getProjecttitle());
-        holder.link.setText("Dimensions "+model.getProjectlink());
+        holder.link.setText("Cost: "+model.getProjectlink());
         holder.desc.setText("Description: "+model.getProjectdesc());
         message=model.getProjectimgurl();
-
+        FirebaseDatabase rootNode2;
+        DatabaseReference reference2;
+        rootNode2 = FirebaseDatabase.getInstance();
+        reference2 = rootNode2.getReference("Projects");
+        SharedPreferences sh = context.getSharedPreferences("MySharedPref", Context.MODE_MULTI_PROCESS);
+        String Uname = sh.getString("name", "");
+        String Ulocation = sh.getString("location", "");
+        Udimen = sh.getString("dimension", "");
+        String Type = sh.getString("type", "");
+        String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
         holder.book.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseDatabase rootNode2;
-                DatabaseReference reference2;
-                rootNode2 = FirebaseDatabase.getInstance();
-                reference2 = rootNode2.getReference("Projects");
-                SharedPreferences sh = context.getSharedPreferences("MySharedPref", Context.MODE_MULTI_PROCESS);
-                String Uname = sh.getString("name", "");
-                String Ulocation = sh.getString("location", "");
-                String Udimen = sh.getString("dimension", "");
-                String Type = sh.getString("type", "");
-                String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
                 Newprojectmodel addnewUser = new Newprojectmodel("",Uname,Ulocation,Udimen,"100000",Type);
                 reference2.child(currentuser).child(currentuser+Uname).setValue(addnewUser);
                 Intent i = new Intent(context, HomeActivity.class);
@@ -149,6 +152,7 @@ public class ProjectsAdapter extends FirebaseRecyclerAdapter<projectmodel, com.e
         TextView title,link,desc;
         TextView img;
         Button book;
+        ImageView budget;
 
 
         public myviewholder(@NonNull View itemView) {
@@ -161,7 +165,17 @@ public class ProjectsAdapter extends FirebaseRecyclerAdapter<projectmodel, com.e
 
             img=(TextView) itemView.findViewById(R.id.proj_image);
             book=(Button) itemView.findViewById(R.id.book);
+            budget=itemView.findViewById(R.id.budgetim);
 
+            budget.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(context, BudgetAnalysis.class);
+                    i.putExtra("dimen",Udimen);
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(i);
+                }
+            });
 
 
 

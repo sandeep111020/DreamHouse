@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.dreamhouse.Adapter.BanksAdapter;
 import com.example.dreamhouse.Adapter.VendorMaterialAdapter;
@@ -18,6 +21,7 @@ public class BankLIstScreen extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private BanksAdapter adapter1;
+    Button schemes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +29,14 @@ public class BankLIstScreen extends AppCompatActivity {
         setContentView(R.layout.activity_bank_list_screen);
         recyclerView=findViewById(R.id.recycler_menu);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        schemes=findViewById(R.id.schemes);
+        schemes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(BankLIstScreen.this,SchemesScreen.class);
+                startActivity(i);
+            }
+        });
         String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         FirebaseRecyclerOptions<BankListModel> options =

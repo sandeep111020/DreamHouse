@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_marginLeft="25dp"
-                android:text="Please fill all the details"
+                android:text="Project Details"
                 app:neumorph_shapeType="basin"
                 android:id="@+id/demoprojtype"
                 android:textAlignment="center"
@@ -165,7 +165,7 @@
                 android:inputType="numberDecimal"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/cardborder"
-                android:hint="Please enter soil test SBC Value"
+                android:hint="Total Deal Money"
                 android:textAlignment="center" />
             <LinearLayout
                 android:layout_width="match_parent"

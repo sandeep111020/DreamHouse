@@ -32,7 +32,7 @@
         <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_house_type_selection.xml" value="0.10666666666666667" />
         <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_housesdisplay_screen.xml" value="0.1703125" />
-        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_land_rules_screen.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_land_rules_screen.xml" value="0.22" />
         <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_login_screen.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_my_history.xml" value="0.1" />
@@ -43,6 +43,7 @@
         <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_project_profile_screen.xml" value="0.1703125" />
         <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_project_progress.xml" value="0.22" />
         <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_project_update.xml" value="0.1703125" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_schemes_screen.xml" value="0.1703125" />
         <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_soil_test_screen.xml" value="0.22" />
         <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_specifications_screen.xml" value="0.10733695652173914" />
         <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/activity_techis_screen.xml" value="0.1" />
@@ -63,7 +64,7 @@
         <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/fragment_photofragment.xml" value="0.1703125" />
         <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/fragment_project_update.xml" value="0.15364583333333334" />
         <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/fragment_task.xml" value="0.1703125" />
-        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/houselist_item.xml" value="0.1" />
+        <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/houselist_item.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/material_item.xml" value="0.22" />
         <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/onboard2.xml" value="0.10666666666666667" />
         <entry key="..\:/Users/sandeep/AndroidStudioProjects/DreamHouse/app/src/main/res/layout/onboard_item.xml" value="0.1" />

@@ -128,15 +128,15 @@
                 android:textSize="20dp"/>
         </RadioGroup>
 
-        <CheckBox
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Do you need putti?"/>
+<!--        <CheckBox-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Do you need putti?"/>-->
 
-        <CheckBox
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Do you wnat Interior Designing?"/>
+<!--        <CheckBox-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Do you wnat Interior Designing?"/>-->
 
         <soup.neumorphism.NeumorphButton
             android:id="@+id/proceed"

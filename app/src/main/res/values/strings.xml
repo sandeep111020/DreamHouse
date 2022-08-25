@@ -13,7 +13,9 @@
     <string name="ob2_header1">SESIMIC ZONE</string>
     <string name="ob2_header2">WIND SPEED</string>
     <string name="ob2_header3">CLIMATOLOGY</string>
-    <string name="ob2_header4">NATURE OD LAND</string>
+
+    <string name="ob2_header4">NATURE OF LAND</string>
+    <string name="ob2_header5">SBC VALUE</string>
     <string name="view_more"><u>View More</u></string>
     <string name="view_less"><u>View Less</u></string>
     <string name="ob_get_started">GET STARTED</string>
@@ -26,6 +28,7 @@
     <string name="ob2_desc2">The wind speed value of your area is 50 so you not allowed to build high buildings</string>
     <string name="ob2_desc3">The cilmatology of your area is snowfall so you not allowed to build flat roof houses </string>
     <string name="ob2_desc4">The nature of your land is hilly so you  prefer wooden buildings</string>
+    <string name="ob2_desc5">The Safe bearing capaicty of your land is 10ton week like soil it is risk to construct the high buildings</string>
 
     <string name="my_projets">My Projets</string>
     <string name="my_history">My History</string>

@@ -4,11 +4,13 @@ import android.content.Context;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,11 +19,14 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.dreamhouse.HomeActivity;
+import com.example.dreamhouse.Models.Newprojectmodel;
 import com.example.dreamhouse.Models.projectmodel;
 import com.example.dreamhouse.R;
 import com.example.dreamhouse.ViewPdfActivity;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -70,10 +75,30 @@ public class ProjectsAdapter extends FirebaseRecyclerAdapter<projectmodel, com.e
     @Override
     protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull projectmodel model) {
         holder.title.setText("Name: "+model.getProjecttitle());
-        holder.link.setText("ProjectLink "+model.getProjectlink());
-        holder.desc.setText("ProjectDescription: "+model.getProjectdesc());
+        holder.link.setText("Dimensions "+model.getProjectlink());
+        holder.desc.setText("Description: "+model.getProjectdesc());
         message=model.getProjectimgurl();
 
+        holder.book.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseDatabase rootNode2;
+                DatabaseReference reference2;
+                rootNode2 = FirebaseDatabase.getInstance();
+                reference2 = rootNode2.getReference("Projects");
+                SharedPreferences sh = context.getSharedPreferences("MySharedPref", Context.MODE_MULTI_PROCESS);
+                String Uname = sh.getString("name", "");
+                String Ulocation = sh.getString("location", "");
+                String Udimen = sh.getString("dimension", "");
+                String Type = sh.getString("type", "");
+                String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                Newprojectmodel addnewUser = new Newprojectmodel("",Uname,Ulocation,Udimen,"100000",Type);
+                reference2.child(currentuser).child(currentuser+Uname).setValue(addnewUser);
+                Intent i = new Intent(context, HomeActivity.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(i);
+            }
+        });
         holder.img.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -123,6 +148,7 @@ public class ProjectsAdapter extends FirebaseRecyclerAdapter<projectmodel, com.e
 
         TextView title,link,desc;
         TextView img;
+        Button book;
 
 
         public myviewholder(@NonNull View itemView) {
@@ -134,6 +160,7 @@ public class ProjectsAdapter extends FirebaseRecyclerAdapter<projectmodel, com.e
             desc = (TextView) itemView.findViewById(R.id.proj_desc);
 
             img=(TextView) itemView.findViewById(R.id.proj_image);
+            book=(Button) itemView.findViewById(R.id.book);
 
 
 

@@ -58,16 +58,7 @@ public class NewProject extends AppCompatActivity {
         dimesion=findViewById(R.id.dimensions);
         landtype=findViewById(R.id.landtype);
 //        check=findViewById(R.id.budget);
-        Switch sw = (Switch) findViewById(R.id.switch1);
-        sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    // The toggle is enabled
-                } else {
-                    // The toggle is disabled
-                }
-            }
-        });
+
         ArrayAdapter ab = new ArrayAdapter(this,android.R.layout.simple_spinner_item,sta);
         ab.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         state.setAdapter(ab);

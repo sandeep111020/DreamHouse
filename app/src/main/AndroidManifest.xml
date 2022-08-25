@@ -22,6 +22,18 @@
         android:theme="@style/Theme.DreamHouse"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".NewPayment"
+            android:exported="false" />
+        <activity
+            android:name=".AddTask"
+            android:exported="false" />
+        <activity
+            android:name=".AddMaterial"
+            android:exported="false" />
+        <activity
+            android:name=".AddImageScreen"
+            android:exported="false" />
+        <activity
             android:name=".ProjectProfileScreen"
             android:exported="false" />
         <activity
@@ -96,7 +108,8 @@
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home" />
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

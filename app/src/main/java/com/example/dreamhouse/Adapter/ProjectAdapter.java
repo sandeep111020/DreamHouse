@@ -89,6 +89,22 @@ public class ProjectAdapter extends FirebaseRecyclerAdapter<Newprojectmodel, Pro
                     i.putExtra("name",model.getName());
                     i.putExtra("dimen",model.getDimension());
                     i.putExtra("type","without");
+                    SharedPreferences sharedPreferences = context.getSharedPreferences("MySharedPref",MODE_PRIVATE);
+
+// Creating an Editor object to edit(write to the file)
+                    SharedPreferences.Editor myEdit = sharedPreferences.edit();
+
+// Storing the key and its value as the data fetched from edittext
+                    String num="&";
+                    String empid="";
+                    myEdit.putString("id","");
+                    myEdit.putString("num", num);
+
+// Once the changes have been made,
+// we need to commit to apply those changes made,
+// otherwise, it will throw an error
+                    myEdit.commit();
+
                     context.startActivity(i);
                 }
 

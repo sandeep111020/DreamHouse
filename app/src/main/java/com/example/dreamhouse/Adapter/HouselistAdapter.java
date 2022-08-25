@@ -19,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.dreamhouse.HomeActivity;
 import com.example.dreamhouse.Models.Houseslist;
 import com.example.dreamhouse.Models.Newprojectmodel;
 import com.example.dreamhouse.Models.Vendoritemmodel;
@@ -90,6 +91,9 @@ public class HouselistAdapter extends FirebaseRecyclerAdapter<Vendoritemmodel, H
                     Newprojectmodel addnewUser = new Newprojectmodel(model.getNumber()+Uname+Udimen,Uname,Ulocation,Udimen,"100000",Type);
                     reference.child(model.getNumber()).child(model.getNumber()+Uname+Udimen).setValue(addnewUser);
                     reference2.child(currentuser).child(currentuser+Uname).setValue(addnewUser);
+                    Intent i = new Intent(context, HomeActivity.class);
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(i);
 
                 }
             });

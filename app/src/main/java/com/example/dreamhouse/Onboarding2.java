@@ -201,9 +201,9 @@ public class Onboarding2 extends AppCompatActivity {
     public void loadData()
     {
 
-        int[] header = {R.string.ob2_header1, R.string.ob2_header2, R.string.ob2_header3,R.string.ob2_header4};
-        int[] desc = {R.string.ob2_desc1, R.string.ob2_desc2, R.string.ob2_desc3,R.string.ob2_desc4};
-        int[] imageId = {R.drawable.ear, R.drawable.wind, R.drawable.clim,R.drawable.land};
+        int[] header = {R.string.ob2_header1, R.string.ob2_header2, R.string.ob2_header3,R.string.ob2_header4,R.string.ob2_header5};
+        int[] desc = {R.string.ob2_desc1, R.string.ob2_desc2, R.string.ob2_desc3,R.string.ob2_desc4,R.string.ob2_desc5 };
+        int[] imageId = {R.drawable.ear, R.drawable.wind, R.drawable.clim,R.drawable.land,R.drawable.sbc};
 
         for(int i=0;i<imageId.length;i++)
         {

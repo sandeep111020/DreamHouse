@@ -6,12 +6,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dreamhouse.Adapter.TaskAdapter;
+import com.example.dreamhouse.AddTask;
+import com.example.dreamhouse.Models.MaterialModel;
 import com.example.dreamhouse.Models.TaskModel;
 import com.example.dreamhouse.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -41,6 +45,7 @@ public class TaskFragment extends Fragment {
     }
     RecyclerView recyclerView;
     TaskAdapter adapter1;
+    Button add;
     private static final int MAX_X_VALUE = 7;
     private static final int MAX_Y_VALUE = 40;
     private static final int MIN_Y_VALUE = 5;
@@ -57,18 +62,39 @@ public class TaskFragment extends Fragment {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_task, container, false);
         recyclerView=root.findViewById(R.id.recycler_menu);
+        add= root.findViewById(R.id.add);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
         SharedPreferences sh = getContext().getSharedPreferences("MySharedPref", Context.MODE_MULTI_PROCESS);
-
-// The value will be default as empty string because for
-// the very first time when the app is opened, there is nothing to show
         String s1 = sh.getString("id", "");
         String num = sh.getString("num", "");
-        FirebaseRecyclerOptions<TaskModel> options =
-                new FirebaseRecyclerOptions.Builder<TaskModel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Projectsvendor").child(num).child(s1).child("Task"), TaskModel.class)
-                        .build();
+        FirebaseRecyclerOptions<TaskModel> options;
+        if(!Character.isDigit(num.charAt(0))){
+            Toast.makeText(getContext(), " null", Toast.LENGTH_SHORT).show();
+            options =
+                    new FirebaseRecyclerOptions.Builder<TaskModel>()
+                            .setQuery(FirebaseDatabase.getInstance().getReference().child("Projectswithoutvendor").child(currentuser).child("Task"), TaskModel.class)
+                            .build();
+
+        }else{
+            Toast.makeText(getContext(), "Non null", Toast.LENGTH_SHORT).show();
+            add.setVisibility(View.GONE);
+             options =
+                    new FirebaseRecyclerOptions.Builder<TaskModel>()
+                            .setQuery(FirebaseDatabase.getInstance().getReference().child("Projectsvendor").child(num).child(s1).child("Task"), TaskModel.class)
+                            .build();
+        }
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), AddTask.class);
+                startActivity(i);
+            }
+        });
+// The value will be default as empty string because for
+// the very first time when the app is opened, there is nothing to show
+
+
 
         // .child("24052021130648")
         adapter1 = new TaskAdapter(options,getActivity());

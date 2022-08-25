@@ -20,7 +20,7 @@
         android:id="@+id/tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your don't have any risk to build this house"
+        android:text="You don't have any risk to build this house"
         android:layout_centerInParent="true"
         android:padding="25sp"
         />

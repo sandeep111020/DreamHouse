@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dreamhouse.Adapter.MaterialAdapter;
+import com.example.dreamhouse.AddMaterial;
 import com.example.dreamhouse.Models.MaterialModel;
 import com.example.dreamhouse.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -49,6 +51,7 @@ public class MaterialFragment extends Fragment {
     private MaterialFragment materialViewModel;
     private RecyclerView recyclerView;
     MaterialAdapter adapter1;
+    Button addmaterial;
 
     public MaterialFragment() {
         // Required empty public constructor
@@ -59,8 +62,8 @@ public class MaterialFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_material, container, false);
-        tableView= (TableLayout) root.findViewById(R.id.tableView);
         recyclerView=root.findViewById(R.id.recycler_menu);
+        addmaterial=root.findViewById(R.id.addmaterial);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
         SharedPreferences sh = getContext().getSharedPreferences("MySharedPref", Context.MODE_MULTI_PROCESS);
@@ -69,12 +72,31 @@ public class MaterialFragment extends Fragment {
 // the very first time when the app is opened, there is nothing to show
         String s1 = sh.getString("id", "");
         String num = sh.getString("num", "");
-        FirebaseRecyclerOptions<MaterialModel> options =
-                new FirebaseRecyclerOptions.Builder<MaterialModel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Projectsvendor").child(num).child(s1).child("Material"), MaterialModel.class)
-                        .build();
+        FirebaseRecyclerOptions<MaterialModel> options;
+        if(num.charAt(0)=='&'){
+            Toast.makeText(getContext(), " null", Toast.LENGTH_SHORT).show();
+            options= new FirebaseRecyclerOptions.Builder<MaterialModel>()
+                    .setQuery(FirebaseDatabase.getInstance().getReference().child("Projectswithoutvendor").child(currentuser).child("Material"), MaterialModel.class)
+                    .build();
+
+        }else{
+            Toast.makeText(getContext(), "Non null", Toast.LENGTH_SHORT).show();
+            addmaterial.setVisibility(View.GONE);
+            options= new FirebaseRecyclerOptions.Builder<MaterialModel>()
+                    .setQuery(FirebaseDatabase.getInstance().getReference().child("Projectsvendor").child(num).child(s1).child("Material"), MaterialModel.class)
+                    .build();
+        }
+        addmaterial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), AddMaterial.class);
+                startActivity(i);
+            }
+        });
+
 
         // .child("24052021130648")
+
         adapter1 = new MaterialAdapter(options,getActivity());
         recyclerView.setAdapter(adapter1);
         adapter1.startListening();
@@ -85,7 +107,7 @@ public class MaterialFragment extends Fragment {
 //                startActivity(i);
 //            }
 //        });
-        showTableLayout();
+      //  showTableLayout();
         //SET PROP
 //        tableView.setHeaderBackgroundColor(Color.parseColor("#2ecc71"));
 //        tableView.setHeaderAdapter(new SimpleTableHeaderAdapter(getContext(),spaceProbeHeaders));

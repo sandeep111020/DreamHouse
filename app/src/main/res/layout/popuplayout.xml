@@ -16,6 +16,14 @@
         android:layout_alignParentRight="true"
         android:background="@null"
         />
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="30dp"
+        android:visibility="gone"
+        android:id="@+id/alertim"
+        android:src="@drawable/alerticon"/>
+
     <TextView
         android:id="@+id/tv"
         android:layout_width="wrap_content"

@@ -25,15 +25,16 @@
     <string name="ob_desc3">Have a perfect analysis of your budget</string>
 
     <string name="ob2_desc1"> The sesimic zone value of your area is 3 so you have chance to build high buildings</string>
-    <string name="ob2_desc2">The wind speed value of your area is 44 so prefer upto 3 floors</string>
-    <string name="ob2_desc3">The cilmatology of your area is heavyrainfall so you dont prefer wooden houses </string>
+    <string name="ob2_desc2">The wind speed value of your area is 44kmph so prefer upto 3 floors</string>
+    <string name="ob2_desc3">The cilmatology of your area is heavy rainfall so you dont prefer wooden houses </string>
     <string name="ob2_desc4">The nature of your land is plain </string>
     <string name="ob2_desc5">The Safe bearing capaicty of your land is 10ton week like soil it is risk to construct the high buildings</string>
 
-    <string name="my_projets">My Projets</string>
-    <string name="my_history">My History</string>
-    <string name="privacy_policy">Privacy Policy</string>
-    <string name="logout">Logout</string>
+    <string name="my_projets">\nMy Projets</string>
+    <string name="my_history">\nMy History</string>
+    <string name="privacy_policy">\nPrivacy Policy</string>
+    <string name="logout">\nLogout</string>
+    <string name="language">\nLanguage</string>
     <string name="materials">Materils</string>
     <string name="payments">Payments</string>
     <string name="tasks">Tasks</string>
@@ -56,4 +57,5 @@
     <string name="dash_board">Dash Board</string>
     <string name="profile">Profile</string>
     <string name="login">Login</string>
+    <string name="newproect">New Project</string>
 </resources>

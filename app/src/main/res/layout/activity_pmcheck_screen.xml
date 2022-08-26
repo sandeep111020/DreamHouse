@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PMCheckScreen">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/modipic"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:textSize="26dp"
+        android:textColor="#EA3838"
+        android:text="Eligibility Crirteria:-"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age:-"
+        android:textStyle="bold"
+        android:layout_marginLeft="30dp"
+
+        android:layout_marginTop="50dp"
+        android:textSize="26dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+android:layout_marginLeft="30dp"
+
+        android:textSize="26dp"
+        android:id="@+id/age"
+        android:text="Age"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Maritial Status:-"
+        android:layout_marginLeft="30dp"
+        android:textStyle="bold"
+
+        android:layout_marginTop="30dp"
+        android:textSize="26dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:textSize="26dp"
+        android:id="@+id/marrige"
+        android:text="Married"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Annual Income:-"
+        android:layout_marginLeft="30dp"
+        android:textStyle="bold"
+
+        android:layout_marginTop="30dp"
+        android:textSize="26dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="26dp"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/income"
+        android:text="Annual income"/>
+
+    <TextView
+        android:id="@+id/interest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:textColor="#4BD951"
+        android:text="Interest" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:id="@+id/banks"
+        android:visibility="gone"
+        android:text="Visit BankLoans"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:id="@+id/proceed"
+        android:text="Proceed"/>
+
+</LinearLayout>

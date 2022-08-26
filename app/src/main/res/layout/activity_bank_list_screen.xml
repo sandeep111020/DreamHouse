@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:id="@+id/schemes"
+        android:visibility="gone"
         android:layout_marginTop="50dp"
         android:text="Show Housing Schemes"/>
     <androidx.recyclerview.widget.RecyclerView

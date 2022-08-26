@@ -4,10 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.math.MathUtils;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -27,6 +31,7 @@ public class BudgetAnalysis extends AppCompatActivity {
     ArrayList pieEntries=new ArrayList<>();
     ArrayList PieEntryLabels;
     ListView l,l2,l3,l4;
+    ImageView yojana;
     ArrayList tutorials= new ArrayList<>();
 //    String tutorials[]
 //            = { "Cement", "Sand" ,
@@ -76,13 +81,25 @@ public class BudgetAnalysis extends AppCompatActivity {
         l2 = findViewById(R.id.listval);
         l3=findViewById(R.id.listq);
         l4=findViewById(R.id.listunit);
+        yojana=findViewById(R.id.yojana);
+
         pushdata();
         int summ = 0;
         for(int i=1;i<vals.size();i++){
             String temp=vals.get(i)+"";
             summ=summ+Integer.parseInt(temp);
         }
-        sum.setText("Total: "+summ+"");
+        int psft=summ/value;
+        sum.setText("Total: "+summ+"\n"+"Cost Per Sft: "+psft);
+        String tt=""+summ;
+        yojana.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(BudgetAnalysis.this,PMCheckScreen.class);
+                i.putExtra("cost",tt);
+                startActivity(i);
+            }
+        });
         arr = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, tutorials);
         l.setAdapter(arr);
         arr4 = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, units);

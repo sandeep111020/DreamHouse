@@ -8,10 +8,11 @@
     <string name="title_activity_project_update">ProjectUpdate</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
-    <string name="my_projets">ମୋର ପ୍ରୋଜେକ୍ଟଗୁଡିକ </string>
-    <string name="my_history">ମୋର ଇତିହାସ  </string>
-    <string name="privacy_policy">ଗୋପନୀୟତା ନୀତି </string>
-    <string name="logout">ପ୍ରସ୍ଥାନ କର </string>
+    <string name="my_projets">\nମୋର ପ୍ରୋଜେକ୍ଟଗୁଡିକ </string>
+    <string name="my_history">\nମୋର ଇତିହାସ  </string>
+    <string name="privacy_policy">\nଗୋପନୀୟତା ନୀତି </string>
+    <string name="logout">\nପ୍ରସ୍ଥାନ କର </string>
+    <string name="language">\nଭାଷା</string>
     <string name="materials">ସାମଗ୍ରୀ </string>
     <string name="payments">ଦେୟ  </string>
     <string name="tasks">କାର୍ଯ୍ୟଗୁଡ଼ିକ </string>
@@ -32,7 +33,9 @@
     <string name="dash_board">ଡ୍ୟାସବୋର୍ଡ | </string>
     <string name="profile">ପ୍ରୋଫାଇଲ୍  </string>
     <string name="login">ଭିତରକୁ ଯାଉ  </string>
-<string name="soil_test">ମାଟି ପରୀକ୍ଷା  </string>
+    <string name="newproect">ନୂତନ ପ୍ରକଳ୍ପ</string>
+
+    <string name="soil_test">ମାଟି ପରୀକ୍ଷା  </string>
 <string name="bot">bot  </string>
 <!--<string name="price">ମୂଲ୍ୟ</string>-->
     </resources>

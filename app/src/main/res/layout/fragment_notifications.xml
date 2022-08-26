@@ -74,7 +74,7 @@
 
                                 android:drawableLeft="@drawable/ic_baseline_space_dashboard_24"
                                 android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
-                                android:hint="\nMy Projects" />
+                                android:hint="@string/my_projets" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -90,7 +90,7 @@
 
                                 android:drawableLeft="@drawable/ic_baseline_history_24"
                                 android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
-                                android:hint="\nMy History" />
+                                android:hint="@string/my_history" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -122,7 +122,7 @@
 
                                 android:drawableLeft="@drawable/ic_baseline_policy_24"
                                 android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
-                                android:hint="\nPrivacy Policy" />
+                                android:hint="@string/privacy_policy" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -137,7 +137,7 @@
                                 android:textAlignment="center"
                                 android:drawableLeft="@drawable/ic_baseline_logout_24"
                                 android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
-                                android:hint="\nLogout" />
+                                android:hint="@string/logout" />
 
 
 
@@ -187,6 +187,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
+                            android:id="@+id/edit"
                             android:layout_marginRight="10dp"
                             android:background="@drawable/ic_baseline_edit_note_24"
                             android:layout_gravity="right"/>

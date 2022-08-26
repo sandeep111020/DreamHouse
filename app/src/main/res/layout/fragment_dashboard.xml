@@ -42,7 +42,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:textColor="#ffffff"
-            android:text="New Project"/>
+            android:text="@string/newproect"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"

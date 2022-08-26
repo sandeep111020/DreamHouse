@@ -23,6 +23,15 @@
         android:theme="@style/Theme.DreamHouse"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".PMDetailsDisplay"
+            android:exported="false" />
+        <activity
+            android:name=".PMCheckScreen"
+            android:exported="false" />
+        <activity
+            android:name=".UserProfile"
+            android:exported="false" />
+        <activity
             android:name=".SchemesScreen"
             android:exported="false" />
         <activity

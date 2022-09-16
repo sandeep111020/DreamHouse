@@ -1,4 +1,4 @@
-# DreamHouse
+# Homify
 
 ![image1](https://user-images.githubusercontent.com/65146010/190665121-b7eb84f0-5b06-495b-8ccc-4f5dd4c55292.png)
 # App Icon
